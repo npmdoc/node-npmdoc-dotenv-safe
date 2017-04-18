@@ -1,0 +1,593 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/rolodato/dotenv-safe#readme">dotenv-safe (v4.0.3)</a>
+</h1>
+<h4>Load environment variables from .env and ensure they are defined</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dotenv-safe">module dotenv-safe</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.MissingEnvVarsError">
+            function <span class="apidocSignatureSpan">dotenv-safe.</span>MissingEnvVarsError
+            <span class="apidocSignatureSpan">(allowEmptyValues, dotenvFilename, sampleFilename, missingVars, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.MissingEnvVarsError.super_">
+            function <span class="apidocSignatureSpan">dotenv-safe.</span>MissingEnvVarsError.super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.config">
+            function <span class="apidocSignatureSpan">dotenv-safe.</span>config
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.load">
+            function <span class="apidocSignatureSpan">dotenv-safe.</span>load
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.parse">
+            function <span class="apidocSignatureSpan">dotenv-safe.</span>parse
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dotenv-safe.MissingEnvVarsError">module dotenv-safe.MissingEnvVarsError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.MissingEnvVarsError.MissingEnvVarsError">
+            function <span class="apidocSignatureSpan">dotenv-safe.</span>MissingEnvVarsError
+            <span class="apidocSignatureSpan">(allowEmptyValues, dotenvFilename, sampleFilename, missingVars, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.MissingEnvVarsError.super_">
+            function <span class="apidocSignatureSpan">dotenv-safe.MissingEnvVarsError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dotenv-safe.MissingEnvVarsError.super_">module dotenv-safe.MissingEnvVarsError.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.MissingEnvVarsError.super_.super_">
+            function <span class="apidocSignatureSpan">dotenv-safe.MissingEnvVarsError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.MissingEnvVarsError.super_.captureStackTrace">
+            function <span class="apidocSignatureSpan">dotenv-safe.MissingEnvVarsError.super_.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">dotenv-safe.MissingEnvVarsError.super_.</span>stackTraceLimit</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dotenv-safe.config">module dotenv-safe.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.config.config">
+            function <span class="apidocSignatureSpan">dotenv-safe.</span>config
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dotenv-safe.parse">module dotenv-safe.parse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.parse.parse">
+            function <span class="apidocSignatureSpan">dotenv-safe.</span>parse
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dotenv-safe" id="apidoc.module.dotenv-safe">module dotenv-safe</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.MissingEnvVarsError" id="apidoc.element.dotenv-safe.MissingEnvVarsError">
+        function <span class="apidocSignatureSpan">dotenv-safe.</span>MissingEnvVarsError
+        <span class="apidocSignatureSpan">(allowEmptyValues, dotenvFilename, sampleFilename, missingVars, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MissingEnvVarsError(allowEmptyValues, dotenvFilename, sampleFilename, missingVars, error) {
+    Error.call(this);
+    this.name = this.constructor.name;
+    this.missing = missingVars;
+    this.sample = sampleFilename;
+    this.message = 'The folowing variables are defined in ' + sampleFilename + ' but are not defined in the environment: ' + missingVars
+.join(', ') + '.\n' +
+        'Make sure to add them to ' + dotenvFilename + ' or directly to the environment.';
+    if (!allowEmptyValues) {
+        var emptyValuesMessage = 'If you expect any of these missing variables to be empty, you can use the allowEmptyValues option
+:\n\n' +
+            "require('dotenv-safe').load({\n" +
+            '  allowEmptyValues: true\n' +
+            '});';
+        this.message += '\n' + emptyValuesMessage;
+    }
+    if (error) {
+        var errorMessage = 'Also, the following error was thrown when trying to read variables from ' + dotenvFilename + ': ' +
+error.message;
+        this.message += '\n' + errorMessage;
+    }
+    Error.captureStackTrace(this, this.constructor);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.MissingEnvVarsError.super_" id="apidoc.element.dotenv-safe.MissingEnvVarsError.super_">
+        function <span class="apidocSignatureSpan">dotenv-safe.</span>MissingEnvVarsError.super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.config" id="apidoc.element.dotenv-safe.config">
+        function <span class="apidocSignatureSpan">dotenv-safe.</span>config
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config = function (options) {
+    options = options || {};
+    var dotenvResult = dotenv.load(options);
+    if (dotenvResult.error) {
+        dotenvResult.parsed = {};
+    }
+    var sample = options.sample || '.env.example';
+    var sampleVars = dotenv.parse(fs.readFileSync(sample));
+    var allowEmptyValues = options.allowEmptyValues || false;
+    var processEnv = allowEmptyValues ? process.env : compact(process.env);
+    var missing = difference(Object.keys(sampleVars), Object.keys(processEnv));
+
+    if (missing.length &gt; 0) {
+        throw new MissingEnvVarsError(allowEmptyValues, options.path || '.env', sample, missing, dotenvResult.error);
+    }
+
+    // Key/value pairs defined in example file and resolved from environment
+    var required = Object.keys(sampleVars).reduce(function (acc, key) {
+        acc[key] = process.env[key];
+        return acc;
+    }, {});
+    var result = {
+        parsed: dotenvResult.parsed,
+        required: required
+    };
+    if (dotenvResult.error) {
+        result.error = dotenvResult.error;
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.load" id="apidoc.element.dotenv-safe.load">
+        function <span class="apidocSignatureSpan">dotenv-safe.</span>load
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (options) {
+    options = options || {};
+    var dotenvResult = dotenv.load(options);
+    if (dotenvResult.error) {
+        dotenvResult.parsed = {};
+    }
+    var sample = options.sample || '.env.example';
+    var sampleVars = dotenv.parse(fs.readFileSync(sample));
+    var allowEmptyValues = options.allowEmptyValues || false;
+    var processEnv = allowEmptyValues ? process.env : compact(process.env);
+    var missing = difference(Object.keys(sampleVars), Object.keys(processEnv));
+
+    if (missing.length &gt; 0) {
+        throw new MissingEnvVarsError(allowEmptyValues, options.path || '.env', sample, missing, dotenvResult.error);
+    }
+
+    // Key/value pairs defined in example file and resolved from environment
+    var required = Object.keys(sampleVars).reduce(function (acc, key) {
+        acc[key] = process.env[key];
+        return acc;
+    }, {});
+    var result = {
+        parsed: dotenvResult.parsed,
+        required: required
+    };
+    if (dotenvResult.error) {
+        result.error = dotenvResult.error;
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```dosini
+# .env, private
+SECRET=topsecret
+TOKEN=
+```
+
+```js
+require('dotenv-safe').<span class="apidocCodeKeywordSpan">load</span>();
+```
+
+Since the provided `.env` file does not contain all the variables defined in
+`.env.example`, an exception is thrown:
+
+```
+MissingEnvVarsError: The folowing variables are defined in .env.example but are not defined in the environment: TOKEN, KEY.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.parse" id="apidoc.element.dotenv-safe.parse">
+        function <span class="apidocSignatureSpan">dotenv-safe.</span>parse
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(src) {
+  var obj = {}
+
+  // convert Buffers before splitting into lines and processing
+  src.toString().split('\n').forEach(function (line) {
+    // matching "KEY' and 'VAL' in 'KEY=VAL'
+    var keyValueArr = line.match(/^\s*([\w\.\-]+)\s*=\s*(.*)?\s*$/)
+    // matched?
+    if (keyValueArr != null) {
+      var key = keyValueArr[1]
+
+      // default undefined or missing values to empty string
+      var value = keyValueArr[2] ? keyValueArr[2] : ''
+
+      // expand newlines in quoted values
+      var len = value ? value.length : 0
+      if (len &gt; 0 &amp;&amp; value.charAt(0) === '"' &amp;&amp; value.charAt(len - 1) === '"') {
+        value = value.replace(/\\n/gm, '\n')
+      }
+
+      // remove any surrounding quotes and extra spaces
+      value = value.replace(/(^['"]|['"]$)/g, '').trim()
+
+      obj[key] = value
+    }
+  })
+
+  return obj
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    config: function (options) {
+options = options || {};
+var dotenvResult = dotenv.load(options);
+if (dotenvResult.error) {
+    dotenvResult.parsed = {};
+}
+var sample = options.sample || '.env.example';
+var sampleVars = dotenv.<span class="apidocCodeKeywordSpan">parse</span>(fs.readFileSync(sample));
+var allowEmptyValues = options.allowEmptyValues || false;
+var processEnv = allowEmptyValues ? process.env : compact(process.env);
+var missing = difference(Object.keys(sampleVars), Object.keys(processEnv));
+
+if (missing.length &gt; 0) {
+    throw new MissingEnvVarsError(allowEmptyValues, options.path || '.env', sample, missing, dotenvResult.error);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dotenv-safe.MissingEnvVarsError" id="apidoc.module.dotenv-safe.MissingEnvVarsError">module dotenv-safe.MissingEnvVarsError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.MissingEnvVarsError.MissingEnvVarsError" id="apidoc.element.dotenv-safe.MissingEnvVarsError.MissingEnvVarsError">
+        function <span class="apidocSignatureSpan">dotenv-safe.</span>MissingEnvVarsError
+        <span class="apidocSignatureSpan">(allowEmptyValues, dotenvFilename, sampleFilename, missingVars, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MissingEnvVarsError(allowEmptyValues, dotenvFilename, sampleFilename, missingVars, error) {
+    Error.call(this);
+    this.name = this.constructor.name;
+    this.missing = missingVars;
+    this.sample = sampleFilename;
+    this.message = 'The folowing variables are defined in ' + sampleFilename + ' but are not defined in the environment: ' + missingVars
+.join(', ') + '.\n' +
+        'Make sure to add them to ' + dotenvFilename + ' or directly to the environment.';
+    if (!allowEmptyValues) {
+        var emptyValuesMessage = 'If you expect any of these missing variables to be empty, you can use the allowEmptyValues option
+:\n\n' +
+            "require('dotenv-safe').load({\n" +
+            '  allowEmptyValues: true\n' +
+            '});';
+        this.message += '\n' + emptyValuesMessage;
+    }
+    if (error) {
+        var errorMessage = 'Also, the following error was thrown when trying to read variables from ' + dotenvFilename + ': ' +
+error.message;
+        this.message += '\n' + errorMessage;
+    }
+    Error.captureStackTrace(this, this.constructor);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.MissingEnvVarsError.super_" id="apidoc.element.dotenv-safe.MissingEnvVarsError.super_">
+        function <span class="apidocSignatureSpan">dotenv-safe.MissingEnvVarsError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dotenv-safe.MissingEnvVarsError.super_" id="apidoc.module.dotenv-safe.MissingEnvVarsError.super_">module dotenv-safe.MissingEnvVarsError.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.MissingEnvVarsError.super_.super_" id="apidoc.element.dotenv-safe.MissingEnvVarsError.super_.super_">
+        function <span class="apidocSignatureSpan">dotenv-safe.MissingEnvVarsError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.MissingEnvVarsError.super_.captureStackTrace" id="apidoc.element.dotenv-safe.MissingEnvVarsError.super_.captureStackTrace">
+        function <span class="apidocSignatureSpan">dotenv-safe.MissingEnvVarsError.super_.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dotenv-safe.config" id="apidoc.module.dotenv-safe.config">module dotenv-safe.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.config.config" id="apidoc.element.dotenv-safe.config.config">
+        function <span class="apidocSignatureSpan">dotenv-safe.</span>config
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config = function (options) {
+    options = options || {};
+    var dotenvResult = dotenv.load(options);
+    if (dotenvResult.error) {
+        dotenvResult.parsed = {};
+    }
+    var sample = options.sample || '.env.example';
+    var sampleVars = dotenv.parse(fs.readFileSync(sample));
+    var allowEmptyValues = options.allowEmptyValues || false;
+    var processEnv = allowEmptyValues ? process.env : compact(process.env);
+    var missing = difference(Object.keys(sampleVars), Object.keys(processEnv));
+
+    if (missing.length &gt; 0) {
+        throw new MissingEnvVarsError(allowEmptyValues, options.path || '.env', sample, missing, dotenvResult.error);
+    }
+
+    // Key/value pairs defined in example file and resolved from environment
+    var required = Object.keys(sampleVars).reduce(function (acc, key) {
+        acc[key] = process.env[key];
+        return acc;
+    }, {});
+    var result = {
+        parsed: dotenvResult.parsed,
+        required: required
+    };
+    if (dotenvResult.error) {
+        result.error = dotenvResult.error;
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dotenv-safe.parse" id="apidoc.module.dotenv-safe.parse">module dotenv-safe.parse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dotenv-safe.parse.parse" id="apidoc.element.dotenv-safe.parse.parse">
+        function <span class="apidocSignatureSpan">dotenv-safe.</span>parse
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(src) {
+  var obj = {}
+
+  // convert Buffers before splitting into lines and processing
+  src.toString().split('\n').forEach(function (line) {
+    // matching "KEY' and 'VAL' in 'KEY=VAL'
+    var keyValueArr = line.match(/^\s*([\w\.\-]+)\s*=\s*(.*)?\s*$/)
+    // matched?
+    if (keyValueArr != null) {
+      var key = keyValueArr[1]
+
+      // default undefined or missing values to empty string
+      var value = keyValueArr[2] ? keyValueArr[2] : ''
+
+      // expand newlines in quoted values
+      var len = value ? value.length : 0
+      if (len &gt; 0 &amp;&amp; value.charAt(0) === '"' &amp;&amp; value.charAt(len - 1) === '"') {
+        value = value.replace(/\\n/gm, '\n')
+      }
+
+      // remove any surrounding quotes and extra spaces
+      value = value.replace(/(^['"]|['"]$)/g, '').trim()
+
+      obj[key] = value
+    }
+  })
+
+  return obj
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    config: function (options) {
+options = options || {};
+var dotenvResult = dotenv.load(options);
+if (dotenvResult.error) {
+    dotenvResult.parsed = {};
+}
+var sample = options.sample || '.env.example';
+var sampleVars = dotenv.<span class="apidocCodeKeywordSpan">parse</span>(fs.readFileSync(sample));
+var allowEmptyValues = options.allowEmptyValues || false;
+var processEnv = allowEmptyValues ? process.env : compact(process.env);
+var missing = difference(Object.keys(sampleVars), Object.keys(processEnv));
+
+if (missing.length &gt; 0) {
+    throw new MissingEnvVarsError(allowEmptyValues, options.path || '.env', sample, missing, dotenvResult.error);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
