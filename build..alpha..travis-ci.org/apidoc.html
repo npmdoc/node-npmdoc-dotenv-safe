@@ -158,32 +158,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.dotenv-safe.config">module dotenv-safe.config</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.config.config">
-            function <span class="apidocSignatureSpan">dotenv-safe.</span>config
-            <span class="apidocSignatureSpan">(options)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.dotenv-safe.parse">module dotenv-safe.parse</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.dotenv-safe.parse.parse">
-            function <span class="apidocSignatureSpan">dotenv-safe.</span>parse
-            <span class="apidocSignatureSpan">(src)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -275,7 +249,17 @@ error.message;
     }
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var options = {};
+    process.argv.forEach(function (val) {
+        var matches = val.match(/^dotenv_config_(.+)=(.+)/);
+        if (matches) {
+            options[matches[1]] = matches[2];
+        }
+    });
+    require(&#x27;.&#x27;).<span class="apidocCodeKeywordSpan">config</span>(options);
+})();
+...</pre></li>
     </ul>
 
 
@@ -478,115 +462,6 @@ error.message;
     </ul>
 
 
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.dotenv-safe.config" id="apidoc.module.dotenv-safe.config">module dotenv-safe.config</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.dotenv-safe.config.config" id="apidoc.element.dotenv-safe.config.config">
-        function <span class="apidocSignatureSpan">dotenv-safe.</span>config
-        <span class="apidocSignatureSpan">(options)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">config = function (options) {
-    options = options || {};
-    var dotenvResult = dotenv.load(options);
-    if (dotenvResult.error) {
-        dotenvResult.parsed = {};
-    }
-    var sample = options.sample || &#x27;.env.example&#x27;;
-    var sampleVars = dotenv.parse(fs.readFileSync(sample));
-    var allowEmptyValues = options.allowEmptyValues || false;
-    var processEnv = allowEmptyValues ? process.env : compact(process.env);
-    var missing = difference(Object.keys(sampleVars), Object.keys(processEnv));
-
-    if (missing.length &#x3e; 0) {
-        throw new MissingEnvVarsError(allowEmptyValues, options.path || &#x27;.env&#x27;, sample, missing, dotenvResult.error);
-    }
-
-    // Key/value pairs defined in example file and resolved from environment
-    var required = Object.keys(sampleVars).reduce(function (acc, key) {
-        acc[key] = process.env[key];
-        return acc;
-    }, {});
-    var result = {
-        parsed: dotenvResult.parsed,
-        required: required
-    };
-    if (dotenvResult.error) {
-        result.error = dotenvResult.error;
-    }
-    return result;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.dotenv-safe.parse" id="apidoc.module.dotenv-safe.parse">module dotenv-safe.parse</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.dotenv-safe.parse.parse" id="apidoc.element.dotenv-safe.parse.parse">
-        function <span class="apidocSignatureSpan">dotenv-safe.</span>parse
-        <span class="apidocSignatureSpan">(src)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function parse(src) {
-  var obj = {}
-
-  // convert Buffers before splitting into lines and processing
-  src.toString().split(&#x27;\n&#x27;).forEach(function (line) {
-    // matching &#x22;KEY&#x27; and &#x27;VAL&#x27; in &#x27;KEY=VAL&#x27;
-    var keyValueArr = line.match(/^\s*([\w\.\-]+)\s*=\s*(.*)?\s*$/)
-    // matched?
-    if (keyValueArr != null) {
-      var key = keyValueArr[1]
-
-      // default undefined or missing values to empty string
-      var value = keyValueArr[2] ? keyValueArr[2] : &#x27;&#x27;
-
-      // expand newlines in quoted values
-      var len = value ? value.length : 0
-      if (len &#x3e; 0 &#x26;&#x26; value.charAt(0) === &#x27;&#x22;&#x27; &#x26;&#x26; value.charAt(len - 1) === &#x27;&#x22;&#x27;) {
-        value = value.replace(/\\n/gm, &#x27;\n&#x27;)
-      }
-
-      // remove any surrounding quotes and extra spaces
-      value = value.replace(/(^[&#x27;&#x22;]|[&#x27;&#x22;]$)/g, &#x27;&#x27;).trim()
-
-      obj[key] = value
-    }
-  })
-
-  return obj
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-    config: function (options) {
-options = options || {};
-var dotenvResult = dotenv.load(options);
-if (dotenvResult.error) {
-    dotenvResult.parsed = {};
-}
-var sample = options.sample || &#x27;.env.example&#x27;;
-var sampleVars = dotenv.<span class="apidocCodeKeywordSpan">parse</span>(fs.readFileSync(sample));
-var allowEmptyValues = options.allowEmptyValues || false;
-var processEnv = allowEmptyValues ? process.env : compact(process.env);
-var missing = difference(Object.keys(sampleVars), Object.keys(processEnv));
-
-if (missing.length &#x3e; 0) {
-    throw new MissingEnvVarsError(allowEmptyValues, options.path || &#x27;.env&#x27;, sample, missing, dotenvResult.error);
-}
-...</pre></li>
-    </ul>
 
 
 </div>
